@@ -3,7 +3,14 @@
     <style name="Base.Theme.Hotelapp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
     </style>
 
     <style name="Theme.Hotelapp" parent="Base.Theme.Hotelapp" />
+
+    <style name="ImageStyle" parent="Theme.Hotelapp">
+        <item name="android:height">@dimen/large_100</item>
+        <item name="android:layout_marginStart">@dimen/normal_100</item>
+        <item name="android:layout_marginEnd">@dimen/normal_100</item>
+    </style>
 </resources>

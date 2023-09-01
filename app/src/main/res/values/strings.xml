@@ -2,4 +2,11 @@
     <string name="app_name">hotel-app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_hotel">Об отеле</string>
+    <string name="conveniences_text_view">Удобства</string>
+    <string name="most_necessary_text_view">Самое необходимое</string>
+    <string name="included_text_view">Что включено</string>
+    <string name="not_included_text_view">Что не включено</string>
+    <string name="select_number">К выбору номера</string>
+    <string name="price_text_view">от%1$s₽</string>
 </resources>

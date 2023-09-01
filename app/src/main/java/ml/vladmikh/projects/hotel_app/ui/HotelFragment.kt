@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.marginTop
 import androidx.fragment.app.viewModels
+import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
+import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentHotelBinding
 
 
@@ -36,7 +39,26 @@ class HotelFragment : Fragment() {
 
 
             if (state is HotelState.Loaded) {
-                Log.i ("abc", state.hotel.toString())
+
+                val hotel = state.hotel
+                binding.ratingTextView.text = hotel.rating.toString()
+                binding.ratingNameTextView.text = hotel.rating_name.toString()
+                binding.hotelNameTextView.text = hotel.name
+                binding.addressTextView.text = hotel.adress
+                binding.priceTextView.text =
+                    getString(R.string.price_text_view, hotel.minimal_price.toString())
+                binding.priceForItTextView.text = hotel.price_for_it
+                binding.descriptionTextView.text = hotel.about_the_hotel.description
+
+                for(peculiarity in hotel.about_the_hotel.peculiarities) {
+                    val chip = Chip(context).apply {
+                        text = peculiarity
+                        background = resources.getDrawable(R.drawable.chip_drawable)
+                        setTextColor(resources.getColor(R.color.gray))
+
+                    }
+                    binding.peculiaritiesChipGroup.addView(chip)
+                }
             }
         }
     }
