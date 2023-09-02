@@ -72,6 +72,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     // Coil
     implementation("io.coil-kt:coil:1.1.1")
+    //ViewPager
+    implementation("androidx.viewpager2:viewpager2:view_pager_version")
 
 }
 // Allow references to generated code

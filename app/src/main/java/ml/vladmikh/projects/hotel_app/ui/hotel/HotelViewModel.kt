@@ -1,4 +1,4 @@
-package ml.vladmikh.projects.hotel_app.ui
+package ml.vladmikh.projects.hotel_app.ui.hotel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

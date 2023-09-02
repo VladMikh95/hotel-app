@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/hotelFragment"
-        android:name="ml.vladmikh.projects.hotel_app.ui.HotelFragment"
+        android:name="ml.vladmikh.projects.hotel_app.ui.hotel.HotelFragment"
         android:label="fragment_hotel"
         tools:layout="@layout/fragment_hotel" />
 </navigation>

@@ -1,4 +1,4 @@
-package ml.vladmikh.projects.hotel_app.ui
+package ml.vladmikh.projects.hotel_app.ui.hotel
 
 import android.os.Bundle
 import android.util.Log
@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.marginTop
 import androidx.fragment.app.viewModels
 import com.google.android.material.chip.Chip
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentHotelBinding
@@ -34,6 +34,8 @@ class HotelFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        val adapter = ViewPagerAdapter()
+
         viewModel.getHotel()
         viewModel.state.observe(viewLifecycleOwner) { state ->
 
@@ -41,6 +43,14 @@ class HotelFragment : Fragment() {
             if (state is HotelState.Loaded) {
 
                 val hotel = state.hotel
+                binding.viewPager.adapter = adapter
+
+                TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+                }.attach()
+
+                Log.i("abc", hotel.image_urls.toString())
+                adapter.submitList(hotel.image_urls)
+
                 binding.ratingTextView.text = hotel.rating.toString()
                 binding.ratingNameTextView.text = hotel.rating_name.toString()
                 binding.hotelNameTextView.text = hotel.name

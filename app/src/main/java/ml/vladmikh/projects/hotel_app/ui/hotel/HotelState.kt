@@ -1,4 +1,4 @@
-package ml.vladmikh.projects.hotel_app.ui
+package ml.vladmikh.projects.hotel_app.ui.hotel
 
 import ml.vladmikh.projects.hotel_app.data.network.model.Hotel
 import ml.vladmikh.projects.hotel_app.util.ErrorLoadingHotel
