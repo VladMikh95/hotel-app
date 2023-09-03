@@ -9,5 +9,14 @@
         android:id="@+id/hotelFragment"
         android:name="ml.vladmikh.projects.hotel_app.ui.hotel.HotelFragment"
         android:label="fragment_hotel"
-        tools:layout="@layout/fragment_hotel" />
+        tools:layout="@layout/fragment_hotel" >
+        <action
+            android:id="@+id/action_hotelFragment_to_hotelRoomFragment"
+            app:destination="@id/hotelRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelRoomFragment"
+        android:name="ml.vladmikh.projects.hotel_app.ui.hotel_room.HotelRoomFragment"
+        android:label="fragment_hotel_room"
+        tools:layout="@layout/fragment_hotel_room" />
 </navigation>

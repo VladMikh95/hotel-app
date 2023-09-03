@@ -382,11 +382,10 @@
                 android:layout_marginTop="@dimen/normal_50">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/selectNumberButton"
+                    android:id="@+id/buttonSelectHotelRoom"
+                    style="@style/Theme.Hotelapp.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text16"
                     android:text="@string/select_number"
                     android:background="@drawable/button_drawable"/>
 

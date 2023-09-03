@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.chip.Chip
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentHotelBinding
+import ml.vladmikh.projects.hotel_app.ui.adapter.ViewPagerAdapter
 
 
 @AndroidEntryPoint
@@ -35,6 +37,9 @@ class HotelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val adapter = ViewPagerAdapter()
+        binding.buttonSelectHotelRoom.setOnClickListener {
+            findNavController().navigate(R.id.action_hotelFragment_to_hotelRoomFragment)
+        }
 
         viewModel.getHotel()
         viewModel.state.observe(viewLifecycleOwner) { state ->
@@ -47,8 +52,6 @@ class HotelFragment : Fragment() {
 
                 TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
                 }.attach()
-
-                Log.i("abc", hotel.image_urls.toString())
                 adapter.submitList(hotel.image_urls)
 
                 binding.ratingTextView.text = hotel.rating.toString()

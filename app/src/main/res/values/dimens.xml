@@ -13,4 +13,6 @@
     <dimen name="small_10">10dp</dimen>
     <dimen name="normal_200">36dp</dimen>
     <dimen name="normal_150">24dp</dimen>
+    <dimen name="small_5">5dp</dimen>
+    <dimen name="small_29">29dp</dimen>
 </resources>

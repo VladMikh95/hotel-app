@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/normal_50"
+    app:cardCornerRadius="@dimen/normal_100"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/normal_100">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/large_100"
+            android:background="@drawable/view_round_drawable"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".ui.screens.intro.IntroViewPagerFragment"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/normal_50"
+            android:background="@drawable/tab_layout_background"
+            app:tabBackground="@drawable/tab_drawable_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/viewPager"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/roomNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_22"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/normal_50"
+            app:layout_constraintTop_toBottomOf="@id/viewPager"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/peculiaritiesChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.Hotelapp.Chip"
+            android:layout_marginTop="@dimen/normal_100"
+            app:chipSpacingVertical="-4dp"
+            app:chipMinTouchTargetSize="0dp"
+            app:layout_constraintTop_toBottomOf="@id/roomNameTextView"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/detailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/small_29"
+            android:background="@drawable/button_light_blue_drawable"
+            android:drawableEnd="@drawable/arrow_forward_blue"
+            android:paddingStart="@dimen/small_10"
+            android:text="@string/detail_about_room_text_view"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/peculiaritiesChipGroup"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceTextView"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_100"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailButton"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceForTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text16"
+            android:layout_marginStart="@dimen/normal_50"
+            app:layout_constraintStart_toEndOf="@id/priceTextView"
+            app:layout_constraintBottom_toBottomOf="@id/priceTextView"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/selectRoom"
+            style="@style/Theme.Hotelapp.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_100"
+            android:text="@string/select_room_textview"
+            app:layout_constraintTop_toBottomOf="@id/priceTextView"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

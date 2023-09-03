@@ -1,4 +1,4 @@
-package ml.vladmikh.projects.hotel_app.ui.hotel
+package ml.vladmikh.projects.hotel_app.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
 import coil.load
 import ml.vladmikh.projects.hotel_app.databinding.ImageItemBinding
 
