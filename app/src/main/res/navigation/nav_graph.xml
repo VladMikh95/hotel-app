@@ -18,5 +18,14 @@
         android:id="@+id/hotelRoomFragment"
         android:name="ml.vladmikh.projects.hotel_app.ui.hotel_room.HotelRoomFragment"
         android:label="fragment_hotel_room"
-        tools:layout="@layout/fragment_hotel_room" />
+        tools:layout="@layout/fragment_hotel_room" >
+        <action
+            android:id="@+id/action_hotelRoomFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="ml.vladmikh.projects.hotel_app.ui.booking.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking" />
 </navigation>

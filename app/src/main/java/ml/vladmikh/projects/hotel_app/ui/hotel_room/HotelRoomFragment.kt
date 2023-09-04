@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentHotelRoomBinding
 import ml.vladmikh.projects.hotel_app.ui.adapter.RoomAdapter
 
@@ -32,7 +34,11 @@ class HotelRoomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val adapter = RoomAdapter()
+        val adapter = RoomAdapter{
+            //Так как в фрагменте бронирования используются загрузочные данны одинаковые, то
+            //не нужно использовать данные комнаты которой выбрали из RecyclerViewAdapter
+            findNavController().navigate(R.id.action_hotelRoomFragment_to_bookingFragment)
+        }
 
         viewModel.getHotelRooms()
         viewModel.state.observe(viewLifecycleOwner) { state ->

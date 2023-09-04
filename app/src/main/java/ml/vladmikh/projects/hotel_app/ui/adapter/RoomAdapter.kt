@@ -14,7 +14,7 @@ import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.data.network.model.Room
 import ml.vladmikh.projects.hotel_app.databinding.HotelRoomItemBinding
 
-class RoomAdapter() : ListAdapter<Room, RoomAdapter.RoomViewHolder>(DiffCallback) {
+class RoomAdapter(private val onRoomClicked: (Room) -> Unit) : ListAdapter<Room, RoomAdapter.RoomViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Room>() {
@@ -41,6 +41,11 @@ class RoomAdapter() : ListAdapter<Room, RoomAdapter.RoomViewHolder>(DiffCallback
 
     override fun onBindViewHolder(holder: RoomViewHolder, position: Int) {
 
+        //Возвращаем в фрагмент данные комнаты которой выбрали
+        holder.buttonSelectRoom.setOnClickListener {
+                onRoomClicked(getItem(position))
+        }
+
         for(peculiarity in getItem(position).peculiarities) {
             val chip = Chip(holder.chipGroup.context).apply {
                 text = peculiarity
@@ -61,6 +66,9 @@ class RoomAdapter() : ListAdapter<Room, RoomAdapter.RoomViewHolder>(DiffCallback
 
         val chipGroup = binding.peculiaritiesChipGroup
         val priceTextView = binding.priceTextView
+        val buttonSelectRoom = binding.buttonSelectRoom
+
+
         fun bind(room: Room) {
 
             val adapter = ViewPagerAdapter()
@@ -74,5 +82,7 @@ class RoomAdapter() : ListAdapter<Room, RoomAdapter.RoomViewHolder>(DiffCallback
             binding.priceForTextView.text = room.price_per
 
         }
+
+
     }
 }

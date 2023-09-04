@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_gray"
+    tools:context=".ui.booking.BookingFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Блок с отелем -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normal_100"
+                android:background="@drawable/view_round_drawable"
+                android:layout_marginTop="@dimen/normal_50"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rating_background_drawable"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/normal_150"
+                        android:layout_height="@dimen/normal_150"
+                        android:src="@drawable/star_drawable"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/text16"
+                        android:layout_marginStart="2dp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/text16"
+                        android:layout_marginStart="2dp"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hotelNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_22"
+                    android:layout_marginTop="@dimen/normal_50" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addressTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text14"
+                    android:layout_marginTop="@dimen/normal_50" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Конец блока с отелем -->
+
+            <!--Блок с данными брони-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normal_100"
+                android:background="@drawable/view_round_drawable"
+                android:layout_marginTop="@dimen/normal_50">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/departureTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/departure"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/departureValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countryTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/country"
+                    app:layout_constraintTop_toBottomOf="@id/departureValueTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countryValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/departureValueTextView"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dateTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:text="@string/date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/countryValueTextView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dateValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/countryValueTextView"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/numberOfNightsTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_nights"
+                    app:layout_constraintTop_toBottomOf="@id/dateValueTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/numberOfNightsValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/dateValueTextView"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hotelTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hotel"
+                    app:layout_constraintTop_toBottomOf="@id/numberOfNightsValueTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hotelValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/numberOfNightsValueTextView"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/roomTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/room"
+                    app:layout_constraintTop_toBottomOf="@id/hotelValueTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/roomValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/hotelValueTextView"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nutritionTextView"
+                    style="@style/Theme.Hotelapp.TextGray"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nutrition"
+                    app:layout_constraintTop_toBottomOf="@id/roomValueTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nutritionValueTextView"
+                    style="@style/Theme.Hotelapp.TextBlack"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/roomValueTextView"
+                    app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--Конец блока с данными брони-->
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

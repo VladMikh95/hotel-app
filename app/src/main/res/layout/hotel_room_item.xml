@@ -91,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="@id/priceTextView"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/selectRoom"
+            android:id="@+id/buttonSelectRoom"
             style="@style/Theme.Hotelapp.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

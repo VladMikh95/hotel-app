@@ -11,4 +11,17 @@
     <string name="detail_about_room_text_view">Подробнее о номере</string>
     <string name="select_room_textview">Выбрать номер</string>
     <string name="hello">Hello</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="departure">Вылет из</string>
+    <string name="country">Страна,город</string>
+    <string name="date">Даты</string>
+    <string name="number_of_nights">Количество ночей</string>
+    <string name="hotel">Отель</string>
+    <string name="room">Номер</string>
+    <string name="nutrition">Питание</string>
+    <string name="date_value">%1$s - %2$s</string>
+    <string name="night_one">%1$s ночь</string>
+    <string name="night_two">%1$s ночи</string>
+    <string name="night_five">%1$s ночей</string>
 </resources>
