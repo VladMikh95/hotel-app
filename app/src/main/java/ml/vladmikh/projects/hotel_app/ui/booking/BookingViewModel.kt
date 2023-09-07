@@ -19,6 +19,9 @@ class BookingViewModel @Inject constructor (private val repository : BookingRepo
         value = BookingState.Initial
     }
 
+    private var _phoneNumber = MutableLiveData<String>()
+    private val phoneNumber: LiveData<String> get() = _phoneNumber
+
     val state: LiveData<BookingState> get() = _state
 
     fun getBooking() {
@@ -37,4 +40,6 @@ class BookingViewModel @Inject constructor (private val repository : BookingRepo
             }
         }
     }
+
+
 }

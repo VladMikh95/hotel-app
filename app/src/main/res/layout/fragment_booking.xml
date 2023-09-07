@@ -242,18 +242,44 @@
                     style="@style/Widget.Material3.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:boxBackgroundColor="@color/light_gray"
                     app:boxCornerRadiusTopEnd="@dimen/normal_100"
                     app:boxCornerRadiusBottomStart="@dimen/normal_100"
-                    app:boxCornerRadiusTopStart="@dimen/normal_100">
+                    app:boxCornerRadiusBottomEnd="@dimen/normal_100"
+                    app:boxCornerRadiusTopStart="@dimen/normal_100"
+                    app:boxStrokeWidth="0dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
-                        android:hint="Номер телефона"
+                        android:hint="@string/phoneNumber"
                         android:inputType="phone"
-                        app:errorEnabled="true"/>
+                        app:errorEnabled="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmail"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundColor="@color/light_gray"
+                    android:layout_marginTop="@dimen/normal_100"
+                    app:boxCornerRadiusTopEnd="@dimen/normal_100"
+                    app:boxCornerRadiusBottomStart="@dimen/normal_100"
+                    app:boxCornerRadiusBottomEnd="@dimen/normal_100"
+                    app:boxCornerRadiusTopStart="@dimen/normal_100"
+                    app:boxStrokeWidth="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:hint="@string/email"
+                        app:errorEnabled="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

@@ -24,4 +24,6 @@
     <string name="night_one">%1$s ночь</string>
     <string name="night_two">%1$s ночи</string>
     <string name="night_five">%1$s ночей</string>
+    <string name="phoneNumber">Номер телефона</string>
+    <string name="email">Почта</string>
 </resources>

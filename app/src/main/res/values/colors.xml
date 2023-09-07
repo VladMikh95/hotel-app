@@ -8,4 +8,5 @@
     <color name="light_orange">#40FFA800</color>
     <color name="blue">#FF0D72FF</color>
     <color name="light_blue">#160D72FF</color>
+    <color name="error_background">#26EB5757</color>
 </resources>
