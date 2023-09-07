@@ -1,7 +1,6 @@
 package ml.vladmikh.projects.hotel_app.ui.booking
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,7 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentBookingBinding
+import ml.vladmikh.projects.hotel_app.ui.custom_view.PhoneNumberMask
 
 @AndroidEntryPoint
 class BookingFragment : Fragment() {
@@ -52,6 +52,12 @@ class BookingFragment : Fragment() {
                 binding.hotelValueTextView.text = booking.hotel_name
                 binding.roomValueTextView.text = booking.room
                 binding.nutritionValueTextView.text = booking.nutrition
+
+                binding.editTextPhone.setText("+7 (***) ***-**-**")
+                binding.editTextPhone.addTextChangedListener(PhoneNumberMask(binding.editTextPhone){})
+
+
+
             }
         }
     }

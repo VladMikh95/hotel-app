@@ -36,4 +36,9 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/text16</item>
     </style>
+
+    <style name="Theme.Hotelapp.TextInputLayout" parent="Theme.Hotelapp">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
 </resources>
