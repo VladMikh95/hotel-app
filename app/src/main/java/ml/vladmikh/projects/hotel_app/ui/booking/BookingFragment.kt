@@ -10,6 +10,7 @@ import android.widget.EditText
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentBookingBinding
@@ -37,6 +38,9 @@ class BookingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        binding.buttonPay.setOnClickListener {
+            findNavController().navigate(R.id.action_bookingFragment_to_paidForFragment)
+        }
 
         viewModel.getBooking()
         viewModel.state.observe(viewLifecycleOwner) { state ->
@@ -92,6 +96,7 @@ class BookingFragment : Fragment() {
                     (booking.tour_price + booking.service_charge + booking.service_charge).toString())
                 binding.buttonPay.text = getString(R.string.button_pay,
                     (booking.tour_price + booking.service_charge + booking.service_charge).toString())
+
             }
         }
     }

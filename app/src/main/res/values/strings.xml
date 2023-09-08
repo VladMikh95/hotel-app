@@ -44,4 +44,7 @@
     <string name="for_payment">К оплате</string>
     <string name="price">%1$s ₽</string>
     <string name="button_pay">Оплатить %1$s ₽</string>
+    <string name="paid_for_order">Заказ оплачен</string>
+    <string name="payd_for_title">Ваш заказ принят в работу</string>
+    <string name="paid_for_description">Подтверждение заказа №%1$s может занять некоторое время (от 1 часа до суток) Как только мы получим ответот туроператора, вам на почту придет уведомление</string>
 </resources>

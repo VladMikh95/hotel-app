@@ -27,5 +27,14 @@
         android:id="@+id/bookingFragment"
         android:name="ml.vladmikh.projects.hotel_app.ui.booking.BookingFragment"
         android:label="fragment_booking"
-        tools:layout="@layout/fragment_booking" />
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_bookingFragment_to_paidForFragment"
+            app:destination="@id/paidForFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paidForFragment"
+        android:name="ml.vladmikh.projects.hotel_app.ui.paid_for.PaidForFragment"
+        android:label="fragment_paid_for"
+        tools:layout="@layout/fragment_paid_for" />
 </navigation>
