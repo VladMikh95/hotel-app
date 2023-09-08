@@ -1,7 +1,6 @@
 package ml.vladmikh.projects.hotel_app.ui.booking
 
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +13,7 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentBookingBinding
+import ml.vladmikh.projects.hotel_app.ui.adapter.TouristAdapter
 import ml.vladmikh.projects.hotel_app.ui.custom_view.PhoneNumberMask
 
 
@@ -62,12 +62,10 @@ class BookingFragment : Fragment() {
                 binding.editTextPhone.setText("+7 (***) ***-**-**")
                 binding.editTextPhone.addTextChangedListener(PhoneNumberMask(binding.editTextPhone){})
 
-                //Есл буде
                 binding.editTextEmail.onFocusChangeListener = OnFocusChangeListener { v, hasFocus ->
                     if (!hasFocus) {
-                        Log.i("abc",hasFocus.toString())
+
                         if (checkEmail(binding.editTextEmail)) {
-                            Log.i("abc","1")
                             binding.textInputLayoutEmail.boxBackgroundColor =
                                 context?.let { ContextCompat.getColor(it, R.color.light_gray) }!!
                         } else {
@@ -76,6 +74,16 @@ class BookingFragment : Fragment() {
                     }
                 }
 
+                val adapter = TouristAdapter()
+                viewModel.touristUIList.observe(viewLifecycleOwner) { tourists ->
+                    adapter.submitList(tourists)
+
+                }
+                binding.recyclerViewTourist.adapter = adapter
+
+                binding.addTourist.setOnClickListener {
+                    viewModel.addTouristUI()
+                }
             }
         }
     }

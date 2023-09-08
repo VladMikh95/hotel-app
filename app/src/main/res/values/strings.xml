@@ -26,4 +26,16 @@
     <string name="night_five">%1$s ночей</string>
     <string name="phoneNumber">Номер телефона</string>
     <string name="email">Почта</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="birthday">День рождения</string>
+    <string name="citizenship">Гражданство</string>
+    <string name="passport_name">Номер загранпаспорта</string>
+    <string name="passport_validity">Срок действия загранпаспорта</string>
+    <string name="add_tourist">Добавить туриста</string>
+    <string name="tourist_1">Первый турист</string>
+    <string name="tourist_2">Второй турист</string>
+    <string name="tourist_3">Третий турист</string>
+    <string name="tourist_4">Четвертый турист</string>
+    <string name="tourist_5">Пятый турист</string>
 </resources>

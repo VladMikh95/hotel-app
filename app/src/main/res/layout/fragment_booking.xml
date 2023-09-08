@@ -254,6 +254,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
+                        android:textColorHint="@color/gray"
                         android:hint="@string/phoneNumber"
                         android:inputType="phone"
                         app:errorEnabled="true" />
@@ -279,6 +280,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="top"
                         android:hint="@string/email"
+                        android:textColorHint="@color/gray"
                         app:errorEnabled="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -286,6 +288,42 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- Конец блока с информацией о покупателе-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTourist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/tourist_cardview"/>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/normal_100"
+            android:background="@drawable/view_round_drawable"
+            android:layout_marginTop="@dimen/normal_50"
+            android:orientation="horizontal">
+            
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_tourist"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_22"/>
+            
+            <ImageButton
+                android:id="@+id/addTourist"
+                android:background="@drawable/button_add_tourist_baackground"
+                android:src="@drawable/_add_24"
+                android:layout_width="32dp"
+                android:layout_height="32dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+            
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
