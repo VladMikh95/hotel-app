@@ -84,6 +84,14 @@ class BookingFragment : Fragment() {
                 binding.addTourist.setOnClickListener {
                     viewModel.addTouristUI()
                 }
+
+                binding.textViewTourValue.text = getString(R.string.price, booking.tour_price.toString())
+                binding.textViewFuelSurchargeTourValue.text = getString(R.string.price, booking.fuel_charge.toString())
+                binding.textViewServiceFeeValue.text = getString(R.string.price, booking.service_charge.toString())
+                binding.textViewForPaymentValue.text = getString(R.string.price,
+                    (booking.tour_price + booking.service_charge + booking.service_charge).toString())
+                binding.buttonPay.text = getString(R.string.button_pay,
+                    (booking.tour_price + booking.service_charge + booking.service_charge).toString())
             }
         }
     }

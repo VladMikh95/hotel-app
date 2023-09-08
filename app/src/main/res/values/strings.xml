@@ -38,4 +38,10 @@
     <string name="tourist_3">Третий турист</string>
     <string name="tourist_4">Четвертый турист</string>
     <string name="tourist_5">Пятый турист</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_surcharge">Топливный сбор</string>
+    <string name="service_fee">Сервисный сбор</string>
+    <string name="for_payment">К оплате</string>
+    <string name="price">%1$s ₽</string>
+    <string name="button_pay">Оплатить %1$s ₽</string>
 </resources>

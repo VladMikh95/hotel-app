@@ -289,6 +289,8 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- Конец блока с информацией о покупателе-->
 
+
+            <!-- карточки туристов-->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewTourist"
                 android:layout_width="match_parent"
@@ -298,32 +300,147 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/tourist_cardview"/>
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/normal_100"
-            android:background="@drawable/view_round_drawable"
-            android:layout_marginTop="@dimen/normal_50"
-            android:orientation="horizontal">
-            
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
+            <!--Блок добавления туристов-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/add_tourist"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_22"/>
+                android:padding="@dimen/normal_100"
+                android:background="@drawable/view_round_drawable"
+                android:layout_marginTop="@dimen/normal_50"
+                android:orientation="horizontal">
             
-            <ImageButton
-                android:id="@+id/addTourist"
-                android:background="@drawable/button_add_tourist_baackground"
-                android:src="@drawable/_add_24"
-                android:layout_width="32dp"
-                android:layout_height="32dp"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/add_tourist"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_22"/>
+            
+                <ImageButton
+                    android:id="@+id/addTourist"
+                    android:background="@drawable/button_add_tourist_baackground"
+                    android:src="@drawable/_add_24"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--Конец блока добавления туристов-->
 
-            
+            <!-- Блок оплаты-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/view_round_drawable"
+                android:layout_marginTop="@dimen/normal_50">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewTour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tour"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/gray"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewTourValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewFuelSurcharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:text="@string/fuel_surcharge"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/gray"
+                    app:layout_constraintTop_toBottomOf="@id/textViewTour"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewFuelSurchargeTourValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/textViewTour"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewServiceFee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_100"
+                android:text="@string/service_fee"
+                android:textSize="@dimen/text16"
+                android:textColor="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/textViewFuelSurcharge"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewServiceFeeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/textViewFuelSurcharge"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewForPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:text="@string/for_payment"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/gray"
+                    app:layout_constraintTop_toBottomOf="@id/textViewServiceFee"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewForPaymentValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@color/blue"
+                    app:layout_constraintTop_toBottomOf="@id/textViewServiceFee"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Конец блока оплаты-->
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal_100"
+                android:paddingEnd="@dimen/normal_100"
+                android:paddingTop="@dimen/normal_75"
+                android:paddingBottom="@dimen/normal_100"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/normal_50">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonPay"
+                    style="@style/Theme.Hotelapp.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_drawable"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
