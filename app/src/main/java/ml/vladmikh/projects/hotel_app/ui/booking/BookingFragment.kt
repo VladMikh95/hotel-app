@@ -16,6 +16,8 @@ import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentBookingBinding
 import ml.vladmikh.projects.hotel_app.ui.adapter.TouristAdapter
 import ml.vladmikh.projects.hotel_app.ui.custom_view.PhoneNumberMask
+import ml.vladmikh.projects.hotel_app.ui.hotel.HotelState
+import ml.vladmikh.projects.hotel_app.util.ErrorLoadingHotel
 
 
 @AndroidEntryPoint
@@ -42,9 +44,25 @@ class BookingFragment : Fragment() {
             findNavController().navigate(R.id.action_bookingFragment_to_paidForFragment)
         }
 
+        binding.buttonUp.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         viewModel.getBooking()
         viewModel.state.observe(viewLifecycleOwner) { state ->
 
+            binding.progressBar.visibility = if (state == BookingState.Loading) View.VISIBLE else View.GONE
+            binding.scrollView.visibility = if (state is BookingState.Loaded) View.VISIBLE else View.GONE
+            binding.textViewError.visibility = if (state is BookingState.Error) View.VISIBLE else View.GONE
+
+
+            if (state is BookingState.Error) {
+
+                binding.textViewError.text = when(state.error) {
+                    ErrorLoadingHotel.CONNECTION_ERROR -> getString(R.string.text_error_connection_error)
+                    ErrorLoadingHotel.ERROR_UNKNOWN -> getString(R.string.text_error_error_unknown)
+                }
+            }
 
             if (state is BookingState.Loaded) {
 

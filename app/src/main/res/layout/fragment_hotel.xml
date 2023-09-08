@@ -3,11 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.hotel.HotelFragment"
     android:background="@color/light_gray">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/normal_100"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hotel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,121 +38,111 @@
             android:orientation="vertical">
 
             <!-- Блок основные данные про отель-->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/basicCardView"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                app:cardCornerRadius="@dimen/normal_100">
+                android:layout_height="match_parent"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp">
+                    android:layout_height="@dimen/large_100"
+                    tools:context=".ui.screens.intro.IntroViewPagerFragment"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/viewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/large_100"
-                        tools:context=".ui.screens.intro.IntroViewPagerFragment"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/small_18"
+                    android:layout_marginBottom="@dimen/normal_50"
+                    android:background="@drawable/tab_layout_background"
+                    app:tabBackground="@drawable/tab_drawable_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/viewPager"/>
 
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minHeight="@dimen/normal_100"
-                        android:layout_marginBottom="@dimen/normal_50"
-                        android:background="@drawable/tab_layout_background"
-                        app:tabBackground="@drawable/tab_drawable_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/viewPager"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rating_background_drawable"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/viewPager"
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:id="@+id/rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rating_background_drawable"
-                        android:layout_marginTop="@dimen/normal_100"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/viewPager"
-                        app:layout_constraintStart_toStartOf="parent">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/normal_150"
-                            android:layout_height="@dimen/normal_150"
-                            android:src="@drawable/star_drawable"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/ratingTextView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/orange"
-                            android:textSize="@dimen/text16"
-                            android:layout_marginStart="2dp"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/ratingNameTextView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/orange"
-                            android:textSize="@dimen/text16"
-                            android:layout_marginStart="2dp"/>
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/normal_150"
+                        android:layout_height="@dimen/normal_150"
+                        android:src="@drawable/star_drawable"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/hotelNameTextView"
+                        android:id="@+id/ratingTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_22"
-                        android:layout_marginTop="@dimen/normal_50"
-                        app:layout_constraintTop_toBottomOf="@id/rating"
-                        app:layout_constraintStart_toStartOf="parent"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/addressTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/blue"
-                        android:textSize="@dimen/text14"
-                        android:layout_marginTop="@dimen/normal_50"
-                        app:layout_constraintTop_toBottomOf="@id/hotelNameTextView"
-                        app:layout_constraintStart_toStartOf="parent"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/priceTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_30"
-                        android:layout_marginTop="@dimen/normal_100"
-                        android:layout_marginBottom="@dimen/normal_100"
-                        app:layout_constraintTop_toBottomOf="@id/addressTextView"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/priceForItTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/orange"
                         android:textSize="@dimen/text16"
-                        android:layout_marginStart="@dimen/normal_50"
-                        app:layout_constraintBottom_toBottomOf="@id/priceTextView"
-                        app:layout_constraintStart_toEndOf="@id/priceTextView"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:layout_marginStart="2dp"/>
 
-            </androidx.cardview.widget.CardView>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/text16"
+                        android:layout_marginStart="2dp"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hotelNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_22"
+                    android:layout_marginTop="@dimen/normal_50"
+                    app:layout_constraintTop_toBottomOf="@id/rating"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addressTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text14"
+                    android:layout_marginTop="@dimen/normal_50"
+                    app:layout_constraintTop_toBottomOf="@id/hotelNameTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/priceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_30"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:layout_marginBottom="@dimen/normal_100"
+                    app:layout_constraintTop_toBottomOf="@id/addressTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/priceForItTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text16"
+                    android:layout_marginStart="@dimen/normal_50"
+                    app:layout_constraintBottom_toBottomOf="@id/priceTextView"
+                    app:layout_constraintStart_toEndOf="@id/priceTextView"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <!-- Конец блока основные данные про отель-->
 
             <!-- Блок подробные данные об отеле -->
@@ -395,6 +405,23 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewError"
+        android:layout_marginTop="@dimen/normal_100"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_22"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/progressBar"
+        android:layout_marginTop="@dimen/normal_200"
+        android:src="@drawable/progress_drawable"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 

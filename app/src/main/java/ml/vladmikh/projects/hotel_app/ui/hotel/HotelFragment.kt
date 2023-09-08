@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.chip.Chip
 import com.google.android.material.tabs.TabLayoutMediator
@@ -14,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentHotelBinding
 import ml.vladmikh.projects.hotel_app.ui.adapter.ViewPagerAdapter
+import ml.vladmikh.projects.hotel_app.util.ErrorLoadingHotel
 
 
 @AndroidEntryPoint
@@ -37,13 +39,22 @@ class HotelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val adapter = ViewPagerAdapter()
-        binding.buttonSelectHotelRoom.setOnClickListener {
-            findNavController().navigate(R.id.action_hotelFragment_to_hotelRoomFragment)
-        }
 
         viewModel.getHotel()
         viewModel.state.observe(viewLifecycleOwner) { state ->
 
+            binding.progressBar.visibility = if (state == HotelState.Loading) View.VISIBLE else View.GONE
+            binding.scrollView.visibility = if (state is HotelState.Loaded) View.VISIBLE else View.GONE
+            binding.textViewError.visibility = if (state is HotelState.Error) View.VISIBLE else View.GONE
+
+
+            if (state is HotelState.Error) {
+
+                binding.textViewError.text = when(state.error) {
+                    ErrorLoadingHotel.CONNECTION_ERROR -> getString(R.string.text_error_connection_error)
+                    ErrorLoadingHotel.ERROR_UNKNOWN -> getString(R.string.text_error_error_unknown)
+                }
+            }
 
             if (state is HotelState.Loaded) {
 
@@ -71,6 +82,11 @@ class HotelFragment : Fragment() {
 
                     }
                     binding.peculiaritiesChipGroup.addView(chip)
+                }
+
+                binding.buttonSelectHotelRoom.setOnClickListener {
+                    val action = HotelFragmentDirections.actionHotelFragmentToHotelRoomFragment(hotel.name)
+                    findNavController().navigate(action)
                 }
             }
         }

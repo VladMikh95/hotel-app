@@ -17,4 +17,5 @@
     <dimen name="small_29">29dp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="normal_125">20dp</dimen>
+    <dimen name="small_18">18dp</dimen>
 </resources>

@@ -4,13 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_gray"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.hotel_room.HotelRoomFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/normal_100"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/normal_100"
+            android:gravity="center"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewRooms"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/normal_100"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -18,6 +48,24 @@
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="2"
         tools:listitem="@layout/hotel_room_item"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewError"
+        android:layout_marginTop="@dimen/normal_100"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_22"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/progressBar"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/normal_200"
+        android:src="@drawable/progress_drawable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

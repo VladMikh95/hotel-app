@@ -6,12 +6,11 @@
     <string name="included_text_view">Что включено</string>
     <string name="not_included_text_view">Что не включено</string>
     <string name="select_number">К выбору номера</string>
-    <string name="price_text_view">от%1$s₽</string>
+    <string name="price_text_view">от %1$s ₽</string>
     <string name="price_room_text_view">%1$s ₽</string>
     <string name="detail_about_room_text_view">Подробнее о номере</string>
     <string name="select_room_textview">Выбрать номер</string>
     <string name="hello">Hello</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="departure">Вылет из</string>
     <string name="country">Страна,город</string>
@@ -47,4 +46,7 @@
     <string name="paid_for_order">Заказ оплачен</string>
     <string name="payd_for_title">Ваш заказ принят в работу</string>
     <string name="paid_for_description">Подтверждение заказа №%1$s может занять некоторое время (от 1 часа до суток) Как только мы получим ответот туроператора, вам на почту придет уведомление</string>
+    <string name="booking">Бронирование</string>
+    <string name="text_error_connection_error">Ошибка соединения</string>
+    <string name="text_error_error_unknown">Неизвестная ошибка</string>
 </resources>
