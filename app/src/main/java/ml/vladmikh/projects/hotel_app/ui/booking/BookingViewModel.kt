@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import ml.vladmikh.projects.hotel_app.data.repository.BookingRepository
-import ml.vladmikh.projects.hotel_app.ui.adapter.TouristAdapter
 import ml.vladmikh.projects.hotel_app.ui.model.TouristUI
 import ml.vladmikh.projects.hotel_app.util.ErrorLoadingHotel
 import retrofit2.HttpException

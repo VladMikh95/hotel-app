@@ -16,7 +16,6 @@ import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentBookingBinding
 import ml.vladmikh.projects.hotel_app.ui.adapter.TouristAdapter
 import ml.vladmikh.projects.hotel_app.ui.custom_view.PhoneNumberMask
-import ml.vladmikh.projects.hotel_app.ui.hotel.HotelState
 import ml.vladmikh.projects.hotel_app.util.ErrorLoadingHotel
 
 

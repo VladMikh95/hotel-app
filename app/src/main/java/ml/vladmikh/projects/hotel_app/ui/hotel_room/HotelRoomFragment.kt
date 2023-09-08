@@ -13,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.hotel_app.R
 import ml.vladmikh.projects.hotel_app.databinding.FragmentHotelRoomBinding
 import ml.vladmikh.projects.hotel_app.ui.adapter.RoomAdapter
-import ml.vladmikh.projects.hotel_app.ui.hotel.HotelState
 import ml.vladmikh.projects.hotel_app.util.ErrorLoadingHotel
 
 
